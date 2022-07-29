@@ -1,6 +1,6 @@
 class Admin::UsersController < ApplicationController
   def index
-    @data = GetData.new().call("users")
+    @data = GetData.new(path_link: "users").call
   end
 
   def new

@@ -1,27 +1,36 @@
 class GetData
-    def initialize
+    attr_reader :path_link
+
+    def initialize(path_link:)
+        @path_link = path_link
     end
 
-    def call(link)
-        http_request("#{ENV['BASE_URL']}/#{link}", request_type[:get])
-    end
-
-    def request
-    end
-
-    def http_request(uri, type, body = nil)
-        url = URI(uri)
-
-        https = Net::HTTP.new(url.host, url.port)
+    def call
+        https = Net::HTTP.new(uri.host, uri.port)
         https.use_ssl = true
 
-        request_string =  "Net::HTTP::#{type}.new(url)"
+        @request = request(request_type[:get])
+        response = https.request( @request )
+        JSON.parse(response.read_body)
+    end
+
+    private
+
+    def uri
+        return @uri if defined?(@uri)
+        
+        @uri = URI(ENV['BASE_URL'])        
+        @uri = URI.join( @uri, path_link )
+        @uri
+    end
+
+    def request(type)
+        request_string =  "Net::HTTP::#{type}.new(uri)"
         request = eval(request_string)
         request["Content-Type"] = 'application/json'
-        request.body = body if body.present?
+        # request.body = body if body.present?
 
-        response = https.request(request)
-        JSON.parse(response.read_body)
+        request
     end
 
     def request_type
@@ -32,4 +41,5 @@ class GetData
             delete: :Delete
         }
     end
+    # http_request("#{ENV['BASE_URL']}/#{link}", request_type[:get])
 end
