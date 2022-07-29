@@ -1,0 +1,56 @@
+<%= render 'navbar' %>
+
+<div class="content">
+    <div class="container card-box">
+
+        <%= link_to admin_users_path, class: "card" do %>
+            <div class="card--a">
+                <h3>Users</h3>
+                
+                <p>Number of Users</p>
+            </div>
+        <% end %>
+
+
+        <%= link_to admin_photos_path, class: "card" do %>
+            <div class="card--a">
+                <h3>Photos</h3>
+                
+                <p>Number of Photos</p>
+            </div>
+        <% end %>
+
+        <%= link_to admin_todos_path, class: "card" do %>
+            <div class="card--a">
+                <h3>Todos</h3>
+                
+                <p>Number of Todos</p>
+            </div>
+        <% end %>
+
+        <%= link_to admin_comments_path, class: "card" do %>
+            <div class="card--a">
+                <h3>Comments</h3>
+                
+                <p>Number of Comments</p>
+            </div>
+        <% end %>
+
+        <%= link_to admin_posts_path, class: "card" do %>
+            <div class="card--a">
+                <h3>Posts</h3>
+                
+                <p>Number of Posts</p>
+            </div>
+        <% end %>
+
+        <%= link_to admin_albums_path, class: "card" do %>
+            <div class="card--a">
+                <h3>Albums</h3>
+                
+                <p>Number of Albums</p>
+            </div>
+        <% end %>
+
+    </div>
+</div>

@@ -13,3 +13,131 @@
  *= require_tree .
  *= require_self
  */
+
+
+ /* RESETS */
+ *{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* GRID */
+
+
+.container{
+    max-width: 1500px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+/* NAVBAR */
+
+.navbar{
+    background-color: rgb(240, 240, 240);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 1em 0;
+}
+
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0;
+}
+
+.navbar__left {
+    display: flex;
+}
+
+.navbar__left--image {
+    max-width: 150px;
+}
+
+.navbar__left--navlinks {
+    display: flex;
+    align-items: center;
+    margin: 0 1em;
+}
+
+.navbar__left--navlink {
+    margin: 0 1em;
+}
+
+.navbar__left--navlink-a {
+    padding: .6em 2em;
+    color: #4f4f4f;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: .2s ease;
+}
+
+.navbar__left--navlink-a.active,
+.navbar__left--navlink-a:hover {
+    background-color: #11205a;
+    color: white;
+}
+
+/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+
+.content {
+    padding: 0 2em;
+    margin: 2em auto;
+
+}
+
+.card {
+    background-color: whitesmoke;
+    width: 50%;
+    max-width: 800px;
+    transition: .2s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card--a {
+    background-color: #92929283;
+    margin: .5em;
+    padding: 2em;
+    color: black;
+}
+
+.card--a p {
+    margin-top: 3em;
+}
+
+.card-box {
+    background-color: whitesmoke;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (max-width: 1000px) {
+    .card-box {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */

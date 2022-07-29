@@ -1,0 +1,31 @@
+<nav class="navbar">
+    <div class="container navbar__container">
+        <div class="navbar__left">
+            <a href="#" class="navbar__left--brand"><img class="navbar__left--image" src="" alt=""></a>
+            <ul class="navbar__left--navlinks">
+                <li class="navbar__left--navlink">
+                    <%= active_link_to 'Users', admin_users_path, class: "navbar__left--navlink-a" %>
+                </li>
+                <li class="navbar__left--navlink">
+                    <%= active_link_to 'Photos', admin_photos_path, class: "navbar__left--navlink-a" %>
+                </li>
+                <li class="navbar__left--navlink">
+                    <%= active_link_to 'Todos', admin_todos_path, class: "navbar__left--navlink-a" %>
+                </li>
+                <li class="navbar__left--navlink">
+                    <%= active_link_to 'Comments', admin_comments_path, class: "navbar__left--navlink-a" %>
+                </li>
+                <li class="navbar__left--navlink">
+                    <%= active_link_to 'Posts', admin_posts_path, class: "navbar__left--navlink-a" %>
+                </li>
+                <li class="navbar__left--navlink">
+                    <%= active_link_to 'Albums', admin_albums_path, class: "navbar__left--navlink-a" %>
+                </li>
+            </ul>
+        </div>
+
+        <div class="navbar__right">
+            <i></i> Name
+        </div>
+    </div>
+</nav>

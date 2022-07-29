@@ -1,0 +1,24 @@
+<%= render 'navbar' %>
+
+<div class="content">
+    
+    <div class="container card-box">
+    <div>
+        <h1>
+            <%= link_to root_path do %>
+                <i class="fa-solid fa-arrow-left-long"></i> ADMIN
+            <% end %>
+        </h1>
+    </div>
+    
+    <% @data.each do |user| %>
+        <%= link_to admin_user_path(user['id']), class: "card" do %>
+            <div class="card--a">
+                <h3><%= user['name'] %></h3>
+                
+                <p> <%= user['username'] %> </p>
+            </div>
+        <% end %>
+    <% end %>
+    </div>
+</div>
