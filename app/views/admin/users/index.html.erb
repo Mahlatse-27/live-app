@@ -1,25 +1,23 @@
-<%= render 'navbar' %>
-
 <div class="content">
     
     <div class="container card-box">
-    <div class="breadcrumb">
-        <h1>
-            <%= link_to root_path, class: "breadcrumb__link" do %>
-                <i class="fa-solid fa-arrow-left-long"></i> ADMIN
+        <div class="breadcrumb">
+            <h1>
+                <%= link_to root_path, class: "breadcrumb__link" do %>
+                    <i class="fa-solid fa-arrow-left-long"></i> ADMIN
+                <% end %>
+            </h1>
+        </div>
+        
+        <% @data.each do |user| %>
+            <%= link_to admin_user_path(user.id), class: "card" do %>
+                <div class="card--a">
+                    <h3><%= user.id %></h3>
+        
+                    <p> <%= user.username %></p>
+                    <p> <%= user.name %></p>
+                </div>
             <% end %>
-        </h1>
-    </div>
-    
-    <% @data.each do |user| %>
-        <%= link_to admin_user_path(user['id']), class: "card" do %>
-            <div class="card--a">
-                <h3><%= user.id %></h3>
-    
-                <p> <%= user.username %></p>
-                <p> <%= user.name %></p>
-            </div>
         <% end %>
-    <% end %>
     </div>
 </div>

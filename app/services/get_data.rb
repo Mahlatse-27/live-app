@@ -1,8 +1,9 @@
 class GetData
-    attr_reader :path_link
+    attr_reader :path_link, :id
 
-    def initialize(path_link:)
+    def initialize(path_link:, id: nil)
         @path_link = path_link
+        @id = nil
     end
 
     def call
@@ -41,5 +42,4 @@ class GetData
             delete: :Delete
         }
     end
-    # http_request("#{ENV['BASE_URL']}/#{link}", request_type[:get])
 end

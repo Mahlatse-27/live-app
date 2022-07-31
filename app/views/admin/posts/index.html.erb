@@ -1,2 +1,23 @@
-<h1>Admin::Posts#index</h1>
-<p>Find me in app/views/admin/posts/index.html.erb</p>
+<div class="content">
+    
+    <div class="container card-box">
+        <div class="breadcrumb">
+            <h1>
+                <%= link_to root_path, class: "breadcrumb__link" do %>
+                    <i class="fa-solid fa-arrow-left-long"></i> ADMIN
+                <% end %>
+            </h1>
+        </div>
+        
+        <% @data.each do |user| %>
+            <%= link_to admin_post_path(user.id), class: "card" do %>
+                <div class="card--a">
+                    <h3><%= user.id %></h3>
+        
+                    <p> <%= user.title %></p>
+                    <p> <%= user.body %></p>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+</div>
